@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="/" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic-ext" />
+
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 63.5%;
+      font-family: "Montserrat", serif;
+      height: 100%;
+    }
+    body {
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+      height: 100%;
+      color: #9da0b0;
+      background-color: #ebecf1;
+    }
+  
+    a:link, a:visited {
+      text-decoration: none;
+      color: #9da0b0;
+    }
+    a.selected {
+      color: #000;
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .rounded {
+      border-radius: 50%;
+    }
+    .fixed {
+      position: fixed;
+    }
+    .wrapper {
+      height: 100%;
+    }
+    aside {
+      color: #fff;
+      width: 50%; /* give it a width of 25% */
+      float: left; /* float it to the left */
+      height: 100%;
+      margin-left: -50%; 
+      position: absolute;
+      font-size: 2rem;
+      background: url('transp.png'), #383a44;
+      overflow: hidden;
+    }
+    nav li {
+      padding: 8px;
+    }
+
+    section {
+      width: 100%;
+      height: 100%;
+      float: right;
+      margin-right: 0;
+      position: relative;
+    }
+    aside,
+    section {
+      -webkit-transition: margin 0.5s ease-in-out;
+      -moz-transition: margin 0.5s ease-in;
+      -ms-transition: margin 0.5s ease-in;
+      -o-transition: margin 0.5s ease-in;
+      transition: margin 0.5s ease-in;
+    }
+    .main {
+       margin-top: 79px;
+       background-color: #fff;
+       border-bottom: 2px solid #d1d3dc;
+       width: 100%;
+    }
+    .content {
+      background-color: #ebecf1;
+      padding-top: 131px;
+    }
+    .headerfixed {
+      height: 80px;
+      background-color: #35373f;
+      background-image: -moz-linear-gradient(bottom, #6baf3d 0%, #99c739 100%);
+      background-image: -o-linear-gradient(bottom, #6baf3d 0%, #99c739 100%);
+      background-image: -webkit-linear-gradient(bottom, #6baf3d 0%, #99c739 100%);
+      background-image: linear-gradient(bottom, #6baf3d 0%, #99c739 100%);
+      margin: 0;
+      position: fixed;
+      width: 100%;
+      padding: 0 15px;
+      border-bottom: 2px solid #3d6422;
+      z-index: 1000;
+    }
+    .toggle, .biglabel {
+     display: none; 
+    }
+
+    .toggle:checked + .wrapper > aside {
+      margin-left: 0; /* this brings back the navigation into view at 0px*/
+    }
+
+    .toggle:checked + .wrapper > section {
+      margin-right: -50%;
+    }
+
+    .biglabel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+    }
+
+    .toggle:checked + .wrapper > section .biglabel {
+      display:block;
+      cursor: pointer;
+    }
+
+    .navicon {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background: url('navicon.png') no-repeat;
+      background-size: cover;
+      cursor: pointer;
+  }
+  .navlinks {
+    padding: 25px;
+    height: 100%;
+    background: url('transp.png'), #383a44;
+  }
+  .navheader {
+    background: url('transp.png'), #343640;
+    padding: 25px 25px 0;
+  }
+
+  .hrborder {
+    border-top: 2px solid #292a30;
+    border-bottom: 2px solid rgba(255,255,255,0.05);
+    margin-left: -26px;
+    margin-right: -26px;
+    overflow: hidden;
+  }
+
+  .navside {
+    position: relative;
+    line-height: 50px;
+  }
+  .navside:after {
+    content: attr(data-count);
+    position: absolute;
+    right: 25px;
+    line-height: 16px;
+    padding: 8px 17px;
+    opacity: .99;
+    -moz-border-radius: 18px / 17px;
+    -webkit-border-radius: 18px / 17px;
+    border-radius: 18px / 17px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background-color: #33353f;
+    -moz-box-shadow: 0 2px 0 rgba(255,255,255,.1), inset 0 2px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 2px 0 rgba(255,255,255,.1), inset 0 2px 0 rgba(0,0,0,.2);
+    box-shadow: 0 2px 0 rgba(255,255,255,.1), inset 0 2px 0 rgba(0,0,0,.2);
+    font-size: 16px;
+  }
+  .navprofile > * {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .navprofile > figure {
+    max-width: 96px;
+    height: 96px;
+    padding-right: 20px;
+  }
+  .navprofile > div {
+    
+  }
+  .navprofile blockquote {
+    font-size: 2.1rem;
+    margin-bottom: 2rem;
+  }
+  .navprofile .title {
+    color: #ffdd99;
+    font-weight: 400;
+  }
+  .profile-name {
+    margin-top: 20px;
+    line-height: 25px;
+  }
+  .profile-location {
+    color: #9da0b0;
+    font-size: 18px;
+  }
+  .account li {
+    display: inline-block;
+    text-transform: uppercase;
+    width: 33.33333333333333%;
+    text-align: center;
+    font-size: 14px;
+    color: #9da0b0;
+  }
+  .nav-inner li {
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    line-height: 28px;
+    font-size: 1.8rem;
+  }
+  .nav-inner li:after {
+    content: '|';
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav-inner li:last-child:after {
+    content: '';
+  }
+  .featured {
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #d1d3db;
+
+  }
+  .featured img {
+    width: 100%;
+  }
+  .item {
+    margin-bottom: 30px;
+  }
+  .topitem {
+    margin-top: 0;
+  }
+  .dib {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .header-icon {
+    position: absolute;
+  }
+  .header-title {
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 2px rgba(0,0,0,.3);
+  }
+  @media only screen  and (max-width: 640px) {
+    .container {
+      margin: 0;
+      padding: 10px;
+    }
+    .row {
+      padding: 10px;
+      margin: 0 -10px;
+    }
+    [class*="col-"] {
+      padding: 0 10px;
+    }
+    .item {
+      margin-bottom: 20px;
+    }
+    
+    .col-3-of-12 {
+      width: 25%;
+    }
+    .med-2 {
+      width: 50%;
+    }
+  }
+  </style>
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic/js/angular/angular-resource.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/vendors/angular-fitvids.js"></script>
+  </head>
+
+  <body ng-app="starter">
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

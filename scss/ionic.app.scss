@@ -1,0 +1,84 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #4a87ee !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       #ef4e3a !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+$stable: #1d9dd8;
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+@import "grid";
+body {
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  line-height: 28px;
+}
+img {
+  max-height: 100%;
+}
+.container {
+  margin: 30px;
+}
+.masthead {
+}
+article {
+  // display: inline-block;
+  // vertical-align: top;
+  // margin-right: 50px;
+  // width: 235px;
+  // margin-bottom: 50px;
+  // &:nth-child(5n + 5  ) {
+  //   margin-right: 0;
+  // }
+  img {
+    width: 100%;
+  }
+}
+
+.trailer {
+  //padding-bottom: 20%;
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.isotope {
+  background: #DDD;
+  height: 75%; /* inherit height from body */
+}
+
+/* clear fix */
+.isotope:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .brick ---- */
+
+.brick {
+  float: left;
+  width: 235px;
+  height: 400px;
+  background: #0D8;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.7);
+}
+
+.brick.width2 { width: 400px; }
+.brick.height2 { height: 400px; }
+
+/*# sourceMappingURL=ionic.app.css.map */

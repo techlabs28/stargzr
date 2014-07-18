@@ -1,0 +1,51 @@
+<ion-view title="Movies">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+<div class="main fixed">
+       <div class="container">
+         <div class="row">
+            <ul class="nav-inner">
+             <li class="col col-3-of-12">
+              <a href="#" class="selected">
+               <h4>Popular</h4>
+              </a>
+             </li><li class="col col-3-of-12">
+             <a href="#">
+               <h4>Now Playing</h4>
+              </a>
+             </li>
+             <li class="col col-3-of-12">
+             <a href="#">
+               <h4>Top Rated</h4>
+              </a>
+             </li>
+             <li class="col col-3-of-12">
+             <a href="#">
+               <h4>Upcoming</h4>
+              </a>
+             </li>
+           </ul>
+         </div>
+       </div>
+    </div>
+  <div class="content"> 
+        <div class="container">
+         <div class="row">
+           <ul class="items">
+             
+             <li class="item col col-3-of-12 med-2" ng-repeat="movie in movies">
+                <a ng-href="/app/movies/{{movie._id}}/{{movie.slug}}">
+                  <figure>
+                    <img ng-src="http://image.tmdb.org/t/p/w342{{movie.poster_path}}" alt="{{movie.name}}">
+                  </figure>
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>  
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,34 @@
+{
+  "name": "stargzr",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "description": "Stargz - the movie stars search engine",
+  "dependencies": {
+    "agenda": "^0.6.16",
+    "async": "^0.9.0",
+    "bcryptjs": "^1.0.4",
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "express": "~4.2.0",
+    "gulp": "^3.5.6",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^0.7.1",
+    "lodash": "^2.4.1",
+    "mongoose": "^3.8.12",
+    "morgan": "~1.0.0",
+    "node-schedule": "^0.1.13",
+    "request": "^2.36.0",
+    "static-favicon": "~1.0.0"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "gulp-util": "^2.2.14",
+    "shelljs": "^0.3.0"
+  }
+}

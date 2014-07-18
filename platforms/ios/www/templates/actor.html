@@ -1,0 +1,18 @@
+<ion-view title="{{actor.name}}">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+    <h1>{{actor.name}}</h1>
+    <p>{{actor.biography}}</p>
+    <ion-list>
+      <ion-item ng-repeat="movie in actor.movies | orderBy:release_date:reverse" href="#/app/movies/{{movie.title}}">
+        <figure ng-show="{{movie.poster_path}}">
+          <img ng-src="http://image.tmdb.org/t/p/w150{{movie.poster_path}}" alt="{{movie.title}}">
+          <figcaption></figcaption>
+        </figure>
+        {{movie.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
